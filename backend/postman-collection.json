@@ -1,0 +1,177 @@
+{
+  "info": {
+    "name": "Medication Reminder API",
+    "_postman_id": "generated-uuid",
+    "description": "API documentation for the Medication Reminder App.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Register User",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\": \"John Doe\", \"email\": \"john.doe@example.com\", \"password\": \"password123\", \"role\": \"user\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/auth/register",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "auth", "register"]
+        },
+        "description": "This endpoint registers a new user. It requires the user's name, email, password, and role."
+      }
+    },
+    {
+      "name": "Login User",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"email\": \"shyam@gmail.com\", \"password\": \"mohit123\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/auth/login",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "auth", "login"]
+        },
+        "description": "This endpoint logs in a user. It requires the user's email and password."
+      }
+    },
+    {
+      "name": "Add Medicine",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"name\": \"Aspirin\", \"dosage\": \"100mg\", \"schedule_time\": \"08:00\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/medicine",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "medicine"]
+        },
+        "description": "This endpoint adds a new medicine schedule for a user. It requires the medicine name, dosage, and schedule time."
+      }
+    },
+    {
+      "name": "Get Medicines",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/medicines",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "medicines"]
+        },
+        "description": "This endpoint retrieves all medicines scheduled for the authenticated user."
+      }
+    },
+    {
+      "name": "Acknowledge Medicine",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"medicine_id\": 1}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/acknowledge",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "acknowledge"]
+        },
+        "description": "This endpoint acknowledges a medicine for a user. It requires the medicine ID."
+      }
+    },
+    {
+      "name": "Get Acknowledgments",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/admin/acknowledgments",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "admin", "acknowledgments"]
+        },
+        "description": "This endpoint retrieves all acknowledgments for the admin."
+      }
+    },
+    {
+      "name": "Delete Acknowledgment",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/admin/acknowledgments/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "admin", "acknowledgments", "1"],
+          "variable": [
+            {
+              "key": "id",
+              "value": "1"
+            }
+          ]
+        },
+        "description": "This endpoint deletes an acknowledgment by its ID. It requires the acknowledgment ID as a URL parameter."
+      }
+    }
+  ]
+}
